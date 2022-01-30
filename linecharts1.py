@@ -1,10 +1,13 @@
 import pandas as pd
-import plotly.express as px
+import matplotlib.pyplot as plt
 import csv 
 df = pd.read_csv("stars.csv")
 radius = df["Radius"].to_list()
 mass = df["Mass"].to_list()
 mass.sort()
 radius.sort()
-fig = px.line(x = mass,y=radius,title=" Line Chart of Mass & Radius of Stars")
-fig.show()
+plt.plot(radius,mass)
+plt.title("Line Chart of Radius & Mass of the Star")
+plt.xlabel("Radius")
+plt.ylabel("Mass")
+plt.show()
