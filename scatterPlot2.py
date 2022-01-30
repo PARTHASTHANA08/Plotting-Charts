@@ -1,10 +1,13 @@
 import pandas as pd 
-import plotly.express as px 
+import matplotlib.pyplot as plt
 import csv 
 df = df = pd.read_csv("stars.csv")
 gravity = df["Gravity"].to_list()
 mass = df["Mass"].to_list()
 mass.sort()
 gravity.sort()
-fig = px.scatter(x = mass,y=gravity,title="Scatter Plot of Mass & Gravity of Stars")
-fig.show()
+plt.scatter(gravity,mass)
+plt.title("Scatter Plot of Gravity & Mass of the Star")
+plt.xlabel("Gravity")
+plt.ylabel("Mass")
+plt.show()
