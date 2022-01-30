@@ -1,10 +1,13 @@
-import pandas as pd 
-import plotly.express as px 
+import pandas as pd
+import matplotlib.pyplot as plt
 import csv 
-df = df = pd.read_csv("stars.csv")
-gravity = df["Gravity"].to_list()
+df = pd.read_csv("stars.csv")
+Gravity = df["Gravity"].to_list()
 mass = df["Mass"].to_list()
 mass.sort()
-gravity.sort()
-fig = px.line(x = mass,y=gravity,title="Line Chart of Mass & Gravity of Stars")
-fig.show()
+Gravity.sort()
+plt.plot(Gravity,mass)
+plt.title("Line Chart of Gravity & Mass of the Star")
+plt.xlabel("Gravity")
+plt.ylabel("Mass")
+plt.show()
